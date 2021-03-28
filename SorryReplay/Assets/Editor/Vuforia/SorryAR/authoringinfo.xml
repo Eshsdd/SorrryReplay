@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="20.0" toolVersion="9.8.5">
+<ModelTarget name="SorryPiece" targetId="f36c6925a1ba4693b1614c6a2e5cb1b4" version="11.1" toolVersion="9.8.5" bbox="-0.011000 -0.010998 0.000000 0.010994 0.010998 0.025006" previewImage="f36c6925a1ba4693b1614c6a2e5cb1b4_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="SorryPieces_assembly" assemblyId="21dced32141442dc9f73d56d91cb7887">
+<Part name="SorryPiece" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0000" translation="2.21848e-06 0.00974329 0.0577242" rotation="AD: 0.7200527512393491 1.7381858386012898 -0.8328790560156398 160.961" image="SorryPiece_viewpoint_0000.png" trained="yes">
+
+</EntryPoint>
+<EntryPoint name="viewpoint_0001" translation="-2.64419e-06 0.0116613 0.0543987" rotation="AD: 0.9989289868781818 0.2918224512595608 -0.2000542825483271 114.259" image="SorryPiece_viewpoint_0001.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<ModelTargetDatabase mtDBid="3f16a5b0ac4c4624a96ae580e38d25d1" name="SorryAR" toolVersion="13.0" version="13.0">
+    <RecognitionResult assemblyId="21dced32141442dc9f73d56d91cb7887" assemblyName="SorryPiece" entryPoint="viewpoint_0000" />
+    <RecognitionResult assemblyId="21dced32141442dc9f73d56d91cb7887" assemblyName="SorryPiece" entryPoint="viewpoint_0001" />
+</ModelTargetDatabase>
+
+</QCARInfo>

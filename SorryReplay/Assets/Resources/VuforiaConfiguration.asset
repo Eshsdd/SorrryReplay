@@ -17,9 +17,9 @@ MonoBehaviour:
     ufoLicenseKey: QWJJakhVci8vLy8vQUFBQUtHN2JxZnhxUkV2dHBCWVQ3TWdjM0wwK2VWa0R1bDN0WTBLOTQxNzFMRHdRbnBoVk9FUkkwSmUxWWoyeFRnQXNrMTZ1UExDbTN6V2lLTGw1T0Q4RlV1TXZqb2traVFFaDcxNVhOOE9IWG9jMjk5UFdoeWl0K0NYSEFPTWkwWE0yWVF3RkFIOVVXcXVIdnpvM0I2Q0I0V2lJMXRYb2g1WnBwRUNmd3J0bGNvVmM3RFBXd0MwZ0tCcHRacHhBMTVzTEFWc3ZwLytvdVk0a2t1eDNEU1FseG1kV3NoVGRKNnN0UXlPRTFwYXlXVjQwcTI4UVpqK0gzRVpmUlFIT2RHbEJzOFhGU050ZW9Wdm1zZkxZWmk5bmxuQWZBUS9JL2ZROFk4UlJVdjNBWHlDRkZ6eDFTRFRNTHJoRFVvYjhKUGVEZjhHd0ZDTkdCelg5WWVWakhPTzFobEtkZXRZVWlGbGhtVGh2UTk4SU5DRTA=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 1
-    maxSimultaneousObjectTargets: 1
-    useDelayedLoadingObjectTargets: 0
+    maxSimultaneousImageTargets: 2
+    maxSimultaneousObjectTargets: 17
+    useDelayedLoadingObjectTargets: 1
     modelTargetRecoWhileExtendedTracked: 1
     version: 8.5.9
     eulaAcceptedVersions: '{"Values":["8.1","8.5","8.6"]}'
@@ -33,8 +33,8 @@ MonoBehaviour:
   deviceTracker:
     autoInitTracker: 0
     autoStartTracker: 0
-    arcoreRequirement: 0
-    autoImportArcore: 0
+    arcoreRequirement: 1
+    autoImportArcore: 1
   smartTerrain:
     autoInitTracker: 0
     autoStartTracker: 0

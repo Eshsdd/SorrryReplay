@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="SorryPiece" motionHint="adaptive" trackingMode="default"/>
+
+</Tracking>
+
+<Assembly name="SorryPieces_assembly" assemblyId="21dced32141442dc9f73d56d91cb7887">
+<Part name="SorryPiece" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0000" translation="2.21848e-06 0.00974329 0.0577242" rotation="AD: 0.7200527512393491 1.7381858386012898 -0.8328790560156398 160.961" trained="yes">
+
+</EntryPoint>
+<EntryPoint name="viewpoint_0001" translation="-2.64419e-06 0.0116613 0.0543987" rotation="AD: 0.9989289868781818 0.2918224512595608 -0.2000542825483271 114.259" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+<ModelTargetDatabase name="SorryAR" />
+</QCARConfig>
