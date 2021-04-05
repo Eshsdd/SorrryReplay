@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="d20" motionHint="adaptive" trackingMode="default"/>
+
+</Tracking>
+
+<Assembly name="d20s_assembly" assemblyId="5179d58cdd154d2a802b87c012aa63db">
+<Part name="d20" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0005" translation="-0.000422644 0.0276008 0.0735129" rotation="AD: 0.9967339902723551 -0.16869464518828506 0.5738689553154617 208.294" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>

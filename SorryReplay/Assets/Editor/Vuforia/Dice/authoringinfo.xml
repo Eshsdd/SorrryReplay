@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="20.0" toolVersion="9.8.5">
+<ModelTarget name="d20" targetId="d4849b5c1bb346bfb6b3f5be18cb73be" version="11.1" toolVersion="9.8.5" bbox="-0.042062 -0.000000 -0.032145 0.005015 0.038392 0.011614" previewImage="d4849b5c1bb346bfb6b3f5be18cb73be_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="d20s_assembly" assemblyId="5179d58cdd154d2a802b87c012aa63db">
+<Part name="d20" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0005" translation="-0.000422644 0.0276008 0.0735129" rotation="AD: 0.9967339902723551 -0.16869464518828506 0.5738689553154617 208.294" image="d20_viewpoint_0005.png" trained="yes">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARInfo>
