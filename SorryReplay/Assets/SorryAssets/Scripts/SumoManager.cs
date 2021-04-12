@@ -14,6 +14,10 @@ public class SumoManager : MonoBehaviour
     public List<GameObject> SumoFightList;
 
 
+    // Animation
+
+    private Animation anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +25,21 @@ public class SumoManager : MonoBehaviour
         SumoFightList = new List<GameObject>();
 
         SumoSummon(SumoFightList, SumoPawn);
+
+        // Animation
+
+        anim = SumoPawn.GetComponent<Animation>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("animation activated");
+            SumoFightList[1].GetComponent<Animation>().Play("pawn_attack");
+        }
     }
 
     void SumoSummon(List<GameObject> listType, GameObject pawn)
