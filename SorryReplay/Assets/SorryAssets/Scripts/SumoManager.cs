@@ -11,9 +11,10 @@ public class SumoManager : MonoBehaviour
 
     public static int PlayerScore = 0;
 
-
     private float textOpacity = 0;
     private bool textIsFading = false;
+
+    System.Random rnd = new System.Random();
 
     // Start is called before the first frame update
     void Start()
@@ -44,10 +45,15 @@ public class SumoManager : MonoBehaviour
     void Attack()
     {
         // Play Attack Animation 
-        homeAnimator.SetTrigger("Attack");
-        awayAnimator.SetTrigger("Attack");
+        homeAnimator.SetTrigger(getRandomAnimation());
+        awayAnimator.SetTrigger(getRandomAnimation());
 
         PlayerScore++;
+
+        if (PlayerScore >= 5)
+        {
+            pawnDie();
+        }
 
         // Update Scoreboard Text
         text.text = PlayerScore.ToString();
@@ -58,5 +64,27 @@ public class SumoManager : MonoBehaviour
         }
         textOpacity = 1;
         textIsFading = true;
+    }
+
+    string getRandomAnimation()
+    {
+        switch (rnd.Next(0,3))
+        {
+            case 0:
+                return ("Attack");
+                break;
+            case 1:
+                return ("Attack02");
+                break;
+            case 2:
+                return ("Attack");
+                break;
+        }
+        return null;
+    }
+
+    void pawnDie()
+    {
+        awayAnimator.SetTrigger("Die");
     }
 }
