@@ -1,61 +1,60 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SumoManager : MonoBehaviour
 {
+    public Animator homeAnimator;
+    public Animator awayAnimator;
 
-    //game objects
-    public GameObject SumoPawn;
-    public GameObject SumoStage;
-    public GameObject ImageTargetObject;
+    public static int PlayerScore = 0;
+    public Text text;
 
-    //lists
-    public List<GameObject> SumoFightList;
-
-
-    // Animation
-
-    private Animation anim;
+    private float textOpacity = 0;
+    private bool textIsFading = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        SumoFightList = new List<GameObject>();
-
-        SumoSummon(SumoFightList, SumoPawn);
-
-        // Animation
-
-        anim = SumoPawn.GetComponent<Animation>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (textIsFading)
         {
-            Debug.Log("animation activated");
-            SumoFightList[1].GetComponent<Animation>().Play("pawn_attack");
+            textOpacity = textOpacity - (float).01;
+            text.color = new Color(text.color.r, text.color.g, text.color.b, textOpacity);
+            if (textOpacity <= 0)
+            {
+                textIsFading = false;
+            }
+        }
+
+        if (Input.GetKeyDown("mouse 0"))
+        {
+            Attack();
         }
     }
 
-    void SumoSummon(List<GameObject> listType, GameObject pawn)
+    void Attack()
     {
-        float stageCenterX = SumoStage.GetComponent<Renderer>().bounds.center.x;
-        float stageCenterZ = SumoStage.GetComponent<Renderer>().bounds.center.z;
+        // Play Attack Animation 
+        homeAnimator.SetTrigger("Attack");
+        awayAnimator.SetTrigger("Attack");
 
-        float stageWidth = SumoStage.GetComponent<Renderer>().bounds.size.x;
-        float stageLength = SumoStage.GetComponent<Renderer>().bounds.size.z;
-        float stageHeight = SumoStage.GetComponent<Renderer>().bounds.size.y;
+        PlayerScore++;
 
-        float pawnHeight = pawn.GetComponent<Renderer>().bounds.size.y;
-
-        listType.Add((GameObject)Instantiate(pawn, new Vector3(stageCenterX + (stageWidth / 3), stageHeight + (pawnHeight / 2), stageCenterZ + (stageLength / 3)), Quaternion.Euler(0, 0, 0), ImageTargetObject.transform));
-        listType.Add((GameObject)Instantiate(pawn, new Vector3(stageCenterX - (stageWidth / 3), stageHeight + (pawnHeight / 2), stageCenterZ - (stageLength / 3)), Quaternion.Euler(0, 0, 0), ImageTargetObject.transform));
-
-
+        // Update Scoreboard Text
+        text.text = PlayerScore.ToString();
+        text.transform.position = Input.mousePosition;
+        if (text.fontSize < 80)
+        {
+            text.fontSize = 20 + PlayerScore;
+        }
+        textOpacity = 1;
+        textIsFading = true;
     }
 }
