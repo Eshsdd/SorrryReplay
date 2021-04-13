@@ -7,9 +7,10 @@ public class SumoManager : MonoBehaviour
 {
     public Animator homeAnimator;
     public Animator awayAnimator;
+    public Text text;
 
     public static int PlayerScore = 0;
-    public Text text;
+
 
     private float textOpacity = 0;
     private bool textIsFading = false;
