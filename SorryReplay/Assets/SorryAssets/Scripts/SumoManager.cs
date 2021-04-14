@@ -42,18 +42,15 @@ public class SumoManager : MonoBehaviour
         }
     }
 
+
     void Attack()
     {
         // Play Attack Animation 
         homeAnimator.SetTrigger(getRandomAnimation());
+        
         awayAnimator.SetTrigger(getRandomAnimation());
 
         PlayerScore++;
-
-        if (PlayerScore >= 5)
-        {
-            pawnDie();
-        }
 
         // Update Scoreboard Text
         text.text = PlayerScore.ToString();
@@ -72,13 +69,10 @@ public class SumoManager : MonoBehaviour
         {
             case 0:
                 return ("Attack");
-                break;
             case 1:
                 return ("Attack02");
-                break;
             case 2:
-                return ("Attack");
-                break;
+                return ("Attack03");
         }
         return null;
     }

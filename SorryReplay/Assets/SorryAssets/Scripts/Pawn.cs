@@ -7,10 +7,7 @@ using UnityEngine.UI;
 
 public class Pawn : MonoBehaviour
 {
-
-    public Animator animator;
-    
-
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +20,9 @@ public class Pawn : MonoBehaviour
        
     }
 
-    public void Attack()
+    private void OnTriggerEnter(Collider other)
     {
-        // Trigger Animation
-        animator.SetTrigger("Attack");
+        Debug.Log("Collision");
+        audioSource.Play();
     }
 }
