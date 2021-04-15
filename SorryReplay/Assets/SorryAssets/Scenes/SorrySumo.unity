@@ -279,7 +279,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.49780703, y: 0, z: 0.5}
+      m_Extent: {x: 0.33333334, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -358,7 +358,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 90e0febe00000000000000bf000000000000803f00000000000000000000000090e0febe000000000000003f000000000000803f00000000000000000000803f90e0fe3e00000000000000bf000000000000803f000000000000803f0000000090e0fe3e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: abaaaabe00000000000000bf000000000000803f000000000000000000000000abaaaabe000000000000003f000000000000803f00000000000000000000803fabaaaa3e00000000000000bf000000000000803f000000000000803f00000000abaaaa3e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -614,6 +614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleButton: {fileID: 1767599093}
+  drawButton: {fileID: 892921956}
   sumoManager: {fileID: 1949275677}
 --- !u!4 &393278754
 Transform:
@@ -636,7 +637,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'sorryboard_Material
+  m_Name: 'DBZ17Material
 
     13794'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
@@ -651,7 +652,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 96562897c5b94e82b2160fd77f528ed6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 31327ccd7c164a9d9da3947bb3b47435, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1614,7 +1615,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1682591362
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2239,6 +2240,7 @@ MonoBehaviour:
   homeAnimator: {fileID: 1497554661}
   awayAnimator: {fileID: 209400613}
   text: {fileID: 1682591361}
+  PawnHolder: {fileID: 1419233616}
 --- !u!4 &1949275679
 Transform:
   m_ObjectHideFlags: 0
@@ -2467,14 +2469,14 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: sorryboard_
+  mTrackableName: DBZ17
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Sorry_Replay_Target_Database.xml
-  mAspectRatio: 1.0044053
+  mAspectRatio: 1.5
   mImageTargetType: 0
   mWidth: 100
-  mHeight: 100.44053
+  mHeight: 150
 --- !u!4 &2061399402
 Transform:
   m_ObjectHideFlags: 0
@@ -2484,7 +2486,7 @@ Transform:
   m_GameObject: {fileID: 2061399396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100.44053, y: 100.44053, z: 100.44053}
+  m_LocalScale: {x: 150, y: 150, z: 150}
   m_Children:
   - {fileID: 1419233617}
   - {fileID: 1708977757}

@@ -5,14 +5,25 @@ using UnityEngine.UI;
 
 public class SumoManager : MonoBehaviour
 {
+    //insertables
     public Animator homeAnimator;
     public Animator awayAnimator;
-    public Text text;
+    public Text textScore;
+    public Text textTimer;
+    public GameObject PawnHolder;
 
+
+    //time
+    private float timeStart;
+    private float timeReset;
+    private float timeEnd;
+    private bool timerOn = false;
+
+    //scoring
     public static int PlayerScore = 0;
-
     private float textOpacity = 0;
     private bool textIsFading = false;
+    private bool maxScore = false;
 
     System.Random rnd = new System.Random();
 
@@ -26,10 +37,13 @@ public class SumoManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        spinMeRightRound();
+
+
         if (textIsFading)
         {
             textOpacity = textOpacity - (float).01;
-            text.color = new Color(text.color.r, text.color.g, text.color.b, textOpacity);
+            textScore.color = new Color(textScore.color.r, textScore.color.g, textScore.color.b, textOpacity);
             if (textOpacity <= 0)
             {
                 textIsFading = false;
@@ -38,13 +52,25 @@ public class SumoManager : MonoBehaviour
 
         if (Input.GetKeyDown("mouse 0"))
         {
-            Attack();
+            if (maxScore == false)
+            {
+                Attack();
+
+            } else
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
 
     void Attack()
     {
+        if(timerOn == false)
+        {
+            startTimer();
+        }
+
         // Play Attack Animation 
         homeAnimator.SetTrigger(getRandomAnimation());
         
@@ -53,14 +79,24 @@ public class SumoManager : MonoBehaviour
         PlayerScore++;
 
         // Update Scoreboard Text
-        text.text = PlayerScore.ToString();
-        text.transform.position = Input.mousePosition;
-        if (text.fontSize < 80)
+        textScore.text = PlayerScore.ToString();
+        textScore.transform.position = Input.mousePosition;
+        if (textScore.fontSize < 80)
         {
-            text.fontSize = 20 + PlayerScore;
+            textScore.fontSize = 20 + PlayerScore;
         }
         textOpacity = 1;
         textIsFading = true;
+
+        if(PlayerScore == 100)
+        {
+            scoreTimer();
+            //insert fancy end UI elements here
+
+
+            //after the UI is done
+            maxScore = true;
+        }
     }
 
     string getRandomAnimation()
@@ -80,5 +116,29 @@ public class SumoManager : MonoBehaviour
     void pawnDie()
     {
         awayAnimator.SetTrigger("Die");
+    }
+
+    void spinMeRightRound()
+    {
+       PawnHolder.transform.Rotate(0.0f, 0.5f, 0.0f, Space.Self);
+    }
+
+    void startTimer()
+    {
+        //very specific order of times
+        timeStart = Time.time;
+        timeReset = 0;
+        timerOn = true;
+
+    }
+    void scoreTimer()
+    {
+        timeEnd = timeReset + (Time.time - timeStart);
+        int minutes = (int)timeEnd / 60;
+        int seconds = (int)timeEnd % 60;
+        int fraction = (int)(Mathf.Floor((timeEnd - (seconds + minutes * 60)) * 100));
+
+        //add into a text thing, I haven't made yet.
+        textTimer.text = string.Format("{0:00} : {1:00} : {2:00}", minutes, seconds, fraction);
     }
 }

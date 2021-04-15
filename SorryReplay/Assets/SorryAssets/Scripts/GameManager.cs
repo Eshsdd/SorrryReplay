@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
+    //Buttons
     public Button battleButton;
+    public Button drawButton;
+
     public GameObject sumoManager;
+
     // Start is called before the first frame update
     void Start()
     {
