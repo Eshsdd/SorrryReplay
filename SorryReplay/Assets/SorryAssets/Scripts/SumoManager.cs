@@ -10,7 +10,9 @@ public class SumoManager : MonoBehaviour
     public Animator awayAnimator;
     public Text textScore;
     public Text textTimer;
+    public GameObject timerObject;
     public GameObject PawnHolder;
+    public GameObject UImanager;
 
 
     //time
@@ -32,6 +34,8 @@ public class SumoManager : MonoBehaviour
     {
         homeAnimator.SetTrigger("Fall");
         awayAnimator.SetTrigger("Fall");
+        PawnHolder.SetActive(true);
+        UImanager.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,6 +62,11 @@ public class SumoManager : MonoBehaviour
 
             } else
             {
+                PawnHolder.SetActive(false);
+                UImanager.SetActive(true);
+                timerObject.SetActive(false);
+
+                //must go last
                 gameObject.SetActive(false);
             }
         }
@@ -88,7 +97,10 @@ public class SumoManager : MonoBehaviour
         textOpacity = 1;
         textIsFading = true;
 
-        if(PlayerScore == 100)
+
+        Debug.Log("Current Score: " + PlayerScore);
+
+        if (PlayerScore == 100)
         {
             scoreTimer();
             //insert fancy end UI elements here
@@ -96,6 +108,10 @@ public class SumoManager : MonoBehaviour
 
             //after the UI is done
             maxScore = true;
+            Debug.Log("MAX SCORE!!!");
+            Debug.Log("MAX SCORE!!!");
+            Debug.Log("MAX SCORE!!!");
+            textScore.text = "MAX SCORE!!!";
         }
     }
 
@@ -133,6 +149,7 @@ public class SumoManager : MonoBehaviour
     }
     void scoreTimer()
     {
+        timerObject.SetActive(true);
         timeEnd = timeReset + (Time.time - timeStart);
         int minutes = (int)timeEnd / 60;
         int seconds = (int)timeEnd % 60;

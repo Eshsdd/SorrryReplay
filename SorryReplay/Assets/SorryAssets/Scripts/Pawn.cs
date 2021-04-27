@@ -22,7 +22,6 @@ public class Pawn : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision");
-        audioSource.Play();
+        ///audioSource.Play();
     }
 }

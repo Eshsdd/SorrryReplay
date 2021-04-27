@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
     void beginBattle()
     {
         Debug.Log("Battle Button Pressed");
-
         sumoManager.SetActive(true);
     }
 }
