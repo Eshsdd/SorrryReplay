@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     //Buttons
     public Button battleButton;
-    public Button drawButton;
 
     public GameObject sumoManager;
 
@@ -25,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     void beginBattle()
     {
-        Debug.Log("Button Pressed");
+        Debug.Log("Battle Button Pressed");
 
         sumoManager.SetActive(true);
     }
