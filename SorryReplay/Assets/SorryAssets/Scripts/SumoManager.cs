@@ -159,7 +159,7 @@ public class SumoManager : MonoBehaviour
 
     void spinMeRightRound()
     {
-       PawnHolder.transform.Rotate(0.0f, 0.5f, 0.0f, Space.Self);
+       PawnHolder.transform.Rotate(0.0f, 0.7f, 0.0f, Space.Self);
     }
 
     void startTimer()
