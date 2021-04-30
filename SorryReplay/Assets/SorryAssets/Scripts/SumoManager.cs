@@ -89,6 +89,7 @@ public class SumoManager : MonoBehaviour
         PawnHolder.SetActive(false);
         UImanager.SetActive(true);
         markerObject.SetActive(false);
+        textScore.color = new Color(textScore.color.r, textScore.color.g, textScore.color.b, 0);
         PlayerScore = 0;
         maxScore = false;
         playingSumo = false;
@@ -122,7 +123,7 @@ public class SumoManager : MonoBehaviour
 
         Debug.Log("Current Score: " + PlayerScore);
 
-        if (PlayerScore == 10)
+        if (PlayerScore == 100)
         {
             scoreTimer();
             //insert fancy end UI elements here
