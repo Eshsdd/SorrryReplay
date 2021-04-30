@@ -10,9 +10,10 @@ public class SumoManager : MonoBehaviour
     public Animator awayAnimator;
     public Text textScore;
     public Text textTimer;
-    public GameObject timerObject;
+    public GameObject markerObject;
     public GameObject PawnHolder;
     public GameObject UImanager;
+    public GameObject returnObject;
 
 
     //time
@@ -26,23 +27,27 @@ public class SumoManager : MonoBehaviour
     private float textOpacity = 0;
     private bool textIsFading = false;
     private bool maxScore = false;
+    public Button returnButton;
+    public bool playingSumo = false;
 
     System.Random rnd = new System.Random();
 
     // Start is called before the first frame update
     void Start()
     {
+
         homeAnimator.SetTrigger("Fall");
         awayAnimator.SetTrigger("Fall");
-        PawnHolder.SetActive(true);
-        UImanager.SetActive(false);
+        returnButton.onClick.AddListener(goBack);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(playingSumo) { 
         spinMeRightRound();
 
+            
 
         if (textIsFading)
         {
@@ -54,22 +59,39 @@ public class SumoManager : MonoBehaviour
             }
         }
 
+
+
         if (Input.GetKeyDown("mouse 0"))
         {
-            if (maxScore == false)
-            {
-                Attack();
+                if (maxScore == false)
+                {
+                    Attack();
 
-            } else
-            {
-                PawnHolder.SetActive(false);
-                UImanager.SetActive(true);
-                timerObject.SetActive(false);
-
-                //must go last
-                gameObject.SetActive(false);
-            }
+                }
         }
+        }
+    }
+
+
+    public void Setup()
+    {
+
+        PawnHolder.SetActive(true);
+        UImanager.SetActive(false);
+
+        Debug.Log("Setup good " + playingSumo);
+
+    }
+
+    void goBack()
+    {
+
+        PawnHolder.SetActive(false);
+        UImanager.SetActive(true);
+        markerObject.SetActive(false);
+        PlayerScore = 0;
+        maxScore = false;
+        playingSumo = false;
     }
 
 
@@ -100,7 +122,7 @@ public class SumoManager : MonoBehaviour
 
         Debug.Log("Current Score: " + PlayerScore);
 
-        if (PlayerScore == 100)
+        if (PlayerScore == 10)
         {
             scoreTimer();
             //insert fancy end UI elements here
@@ -149,7 +171,8 @@ public class SumoManager : MonoBehaviour
     }
     void scoreTimer()
     {
-        timerObject.SetActive(true);
+        markerObject.SetActive(true);
+        returnObject.SetActive(true);
         timeEnd = timeReset + (Time.time - timeStart);
         int minutes = (int)timeEnd / 60;
         int seconds = (int)timeEnd % 60;
