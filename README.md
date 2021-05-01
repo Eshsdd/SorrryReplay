@@ -9,8 +9,9 @@ Currently we have two way's to run the application.
 
 # For Android Users
 This was the target device we picked when working on this app. Attached in this GitHub is an APK file, simply: 
-   1. Connect your device to the computer?
-   2. a
+   1. Enable installing apps from unknown sources by holding on the web browser app icon -> app info -> advanced settings -> install unknown apps -> toggle to on
+   2. Download the APK file of the app on your android device
+   3. Install the app by running the APK file from a file manager.
 
 # For PC Users
 You can use Vuforia via testing inside unity itself, so if you want to play around with the concept or just try out the game download this repository and try it out for yourself.
